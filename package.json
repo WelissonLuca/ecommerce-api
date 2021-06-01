@@ -1,0 +1,26 @@
+{
+  "name": "ecommerce-api",
+  "version": "1.0.0",
+  "description": "<h1 align=\"center\">Ecommerce-api</h1> <div style=\"display: grid; grid-template-columns: repeat(5, 100px); justify-content: center\">  <img alt=\"GitHub contagem de linguagens\" src=\"https://img.shields.io/github/languages/count/WelissonLuca/ecommerce-api?color=%2304D361&style=plastic\">",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon src/app.js -e js,json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WelissonLuca/ecommerce-api.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/WelissonLuca/ecommerce-api/issues"
+  },
+  "homepage": "https://github.com/WelissonLuca/ecommerce-api#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
