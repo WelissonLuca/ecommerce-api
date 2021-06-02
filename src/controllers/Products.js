@@ -1,13 +1,15 @@
-const fs = require('fs');
+const Model = require('../models/Departaments');
+const Sequelize = require("sequelize");
 
 module.exports = {
 	async create(req, res) {
-		Model.create(req.body)
+		const { name } = req.body
+		const departament = await Model.create({name});
+		console.log(departament)
 
-		produto.push({
-			name: "dsadad22s",
-			produto: "sada2222sd",
-    });
-    return res.send('cheguei aqui');
+	
+		return res.status(201).json(departament)
 	},
+
+	
 };
