@@ -2,7 +2,7 @@ const fs = require('fs');
 
 module.exports = {
 	async create(req, res) {
-		const produto = [];
+		Model.create(req.body)
 
 		produto.push({
 			name: "dsadad22s",

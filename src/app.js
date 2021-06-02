@@ -1,11 +1,22 @@
 const express = require('express');
-
+const sequelize = require('./config/connection');
 const { productsRouter } = require('./routes/products')
 
 const app = express();
 
 app.use(express.json())
 
+const start = async () => {
+  try {
+    await sequelize.authenticate();
+    console.log('connection established');
+
+  } catch (err) {
+    console.log(err)
+  }
+}
+
+start();
 
 app.use('/', productsRouter)
 
