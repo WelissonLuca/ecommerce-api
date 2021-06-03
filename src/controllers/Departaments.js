@@ -15,4 +15,17 @@ module.exports = {
 			return res.status(400).json({ message: err.message });
 		}
 	},
+	async list(req, res) {
+		try {
+			const all = await Model.findAll();
+			if ((all.length === 0)) throw new Error("Nenhum departamento cadastrado");
+			return res.status(200).json(all);
+		} catch (err) {
+			return res.status(400).json({ message: err.message });
+		}
+	},
+	async showProductsDep(req, res) {
+		const { id } = req.params;
+		const productsDep = 
+	}
 };
