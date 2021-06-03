@@ -3,7 +3,7 @@ const controller = require("../controllers/Departaments");
 
 const departamentRouter = express.Router();
 
-departamentRouter.post("/", controller.create);
-departamentRouter.get('/', controller.list);
+departamentRouter.post("/departaments", controller.create);
+departamentRouter.get("/departaments", controller.list);
 
 module.exports = { departamentRouter };

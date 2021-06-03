@@ -19,6 +19,6 @@ const start = async () => {
 start();
 
 app.use("/", productsRouter);
-app.use("/departamento", departamentRouter);
+app.use("/", departamentRouter);
 
 app.listen(3000, () => console.log("server is running"));

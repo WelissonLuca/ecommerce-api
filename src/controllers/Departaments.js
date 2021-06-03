@@ -26,6 +26,6 @@ module.exports = {
 	},
 	async showProductsDep(req, res) {
 		const { id } = req.params;
-		const productsDep = 
 	}
+	
 };

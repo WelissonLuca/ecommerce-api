@@ -7,6 +7,5 @@ const connection = new Sequelize(dbConfig);
 
 ProductsModel.init(connection);
 DepartamentsModel.init(connection);
-DepartamentsModel.associate(connection.models)
-ProductsModel.associate(connection.models);
+
 module.exports = connection;
