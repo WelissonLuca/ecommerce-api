@@ -21,7 +21,7 @@ module.exports = {
 				type: Sequelize.DECIMAL,
 				allowNull: false,
 			},
-			isAvailable: {
+			is_available: {
 				type: Sequelize.ENUM("sim", "não"),
 				allowNull: false,
 			},
