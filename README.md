@@ -43,7 +43,6 @@
 - Node.js 14.17.0;
 
 - MySQL 8.0.25. </p>
-
 <hr>
 
 <!-- TECHNOLOGIES -->

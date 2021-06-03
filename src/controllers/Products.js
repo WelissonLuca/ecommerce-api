@@ -1,33 +1,32 @@
-const Model = require('../models/Products');
+const Model = require("../models/Products");
 const Sequelize = require("sequelize");
 
 module.exports = {
 	async list(req, res) {
-		const all = await Model.findAll()
-		return res.status(200).json(all);
+		try {
+			const all = await Model.findAll();
+			if (all.length === 0) throw new Error("Nenhum produto cadastrado");
+			return res.status(200).json(all);
+		} catch (err) {
+			return res.status(404).json({ message: err.message });
+		}
 	},
 	async show(req, res) {
 		try {
 			const product = await Model.findOne({ where: { id: req.params.id } });
-<<<<<<< HEAD
-			if (productExists)
-=======
->>>>>>> 77e192478a78baebc92681b519221fae37cc6928
-				return res.status(200).json(product);
-		} catch (error) {
-			return res.status(404).json({ message: error });
+			if (product === null) throw new Error("Produto não cadastrado");
+			return res.status(200).json(product);
+		} catch (err) {
+			return res.status(404).json({ message: err.message });
 		}
 	},
 
 	async create(req, res) {
 		try {
-<<<<<<< HEAD
-			const { name, description, price, isAvailable, amount, departament } = req.body;
-			const products = await Model.findOne({ name, description, price, isAvailable, amount, departament });
-			return res.json(products);
-=======
 			const { name, description, price, is_available, amount, departament } =
 				req.body;
+			const productExists = await Model.findOne({ name });
+			if (productExists) throw new Error("Produto já existe na base de dados");
 			const products = await Model.create({
 				name,
 				description,
@@ -37,9 +36,8 @@ module.exports = {
 				departament,
 			});
 			return res.status(201).json(products);
->>>>>>> 77e192478a78baebc92681b519221fae37cc6928
-		} catch (error) {
-			return res.status(400).json({ message: error });
+		} catch (err) {
+			return res.status(400).json({ message: err.message });
 		}
-	}
-}
+	},
+};
