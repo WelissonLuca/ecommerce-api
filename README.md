@@ -18,7 +18,6 @@
 
 - [📋 Sobre](#Sobre)
 - [🕹 Tecnologias](#Tecnologias)
-- [👨🏽‍🔧 Contribuições](#Contribuições)
 - [🧑🏽‍💻 Iniciando o projeto](#Como_rodar_o_projeto)
 - [👨🏽‍🔧 Contribuições](#Contribuições)
 - [📝 Licença](#Licença)
