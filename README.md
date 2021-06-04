@@ -35,7 +35,7 @@
 
 <!-- TECHNOLOGIES -->
 
-# Tecnologias utilizadas
+# Tecnologias 
 
 - [Mysql](https://www.mysql.com/)
 - [Node JS](https://nodejs.org/en/)
@@ -50,7 +50,7 @@
 
 <!-- TECHNOLOGIES -->
 
-# Como rodar o projeto
+# Iniciando
 
 Clone este repositório
 
