@@ -29,7 +29,7 @@
 
 # Sobre
 
-<p align="left"> Este projeto é uma RESP API de um e-commerce fictício, realizada durando o Gama Experience #37, o objetivo é aplicar os conhecimentos da arquitetura REST dentro de uma API. Utilizamos os métodos de listagem de produtos, busca por um produto especifico, postagem de um novo produto, atualização de produto, listagem de departamento e listagem associando cada departamento aos seus produtos associados.  </p>
+<p align="left"> Este projeto é uma RESP API de um e-commerce fictício, realizado durante o Gama Experience #37, o objetivo é aplicar os conhecimentos da arquitetura REST dentro de uma API. Utilizamos os métodos de listagem de produtos, busca por um produto especifico, postagem de um novo produto, atualização de produto, listagem de departamento e listagem associando cada departamento aos seus produtos.  </p>
 
 <hr>
 
@@ -52,20 +52,20 @@
 
 # Como rodar o projeto
 
-Faça um clone desse repositório
+Clone este repositório
 
 ```javascript
 git clone https://github.com/WelissonLuca/ecommerce-api.git
 
 ```
 
-Vá até à pasta dele, e instale as dependências usando o comando:
+Acesse a pasta do projeto, e instale as dependências usando no seu terminal o comando:
 
 ```npm
 npm install ou yarn add
 ```
 
-Crie um arquivo  .env na raiz do projeto e adicione as credências do seu banco de dados, ele deve ter essa estrutura
+Crie um arquivo .env na raiz do projeto e adicione as informações do seu banco de dados, seguindo a seguinte estrutura:
 
 ```env
 
@@ -83,7 +83,7 @@ Inicie o projeto usando o comando:
 npm start ou yarn start
 ```
 
-Rode os comandos para criar o schema, tabelas e adicionar alguns valores
+Use os seguintes comandos para criar o schema, tabelas e adicionar valores
 
 ```npm
 npx sequelize db:create  Comando usado para criar o schema
@@ -91,7 +91,7 @@ npx sequelize db:migrate Comando usado para criar as tabelas
 npx sequelize db:seed:all Comando usado para adicionar alguns valores pre setados no banco
 ```
 
-Para a documentação, acesse esta rota com o projeto rodando
+Para a documentação, acesse esta rota com o projeto em execução
 
 ```url
 http://localhost:3000/api-docs/
@@ -101,14 +101,14 @@ http://localhost:3000/api-docs/
  <summary>Departamentos requisições</summary>
  Para criar um departamento faça uma requisição do tipo POST na rota:
 
- ```
- http://localhost:3000/departaments
- ```
+```
+http://localhost:3000/departaments
+```
 
- Envie pela requisição os dados:
+Envie pela requisição os dados:
 
- ```json
-  "name": "Departament name"
+```json
+ "name": "Departament name"
 ```
 
 Para listar todos os departamentos faça uma requisição do tipo GET na rota:
@@ -129,19 +129,19 @@ http://localhost:3000/departaments/:id
 <summary>Produtos Requisições</summary>
 Para criar um produto faça uma requisição do tipo POST na rota:
 
- ```
- http://localhost:3000/products
- ```
+```
+http://localhost:3000/products
+```
 
- Envie pela requisição os dados:
+Envie pela requisição os dados:
 
- ```json
-    "name": "product name",
-    "description": "product description",
-    "price": "1000",
-    "is_available": "sim",
-    "amount": 4,
-    "departament": 1
+```json
+   "name": "product name",
+   "description": "product description",
+   "price": "1000",
+   "is_available": "sim",
+   "amount": 4,
+   "departament": 1
 ```
 
 Para listar todos os produtos faça uma requisição do tipo GET na rota:
@@ -180,5 +180,5 @@ Distribuído sob a licença MIT. Veja `LICENSE` para mais informações.
 
 # Contatos
 
-| [<img src="https://avatars.githubusercontent.com/u/33432680?v=4" width="115"><br><small>@inglyd</small>](https://github.com/inglyd) | [<img src="https://avatars.githubusercontent.com/u/62263143?v=4" width="115"><br><sub>@WelissonLuca</sub>](https://github.com/WelissonLuca)
-| :---: | :---: |
+| [<img src="https://avatars.githubusercontent.com/u/33432680?v=4" width="115"><br><small>@inglyd</small>](https://github.com/inglyd) | [<img src="https://avatars.githubusercontent.com/u/62263143?v=4" width="115"><br><sub>@WelissonLuca</sub>](https://github.com/WelissonLuca) |
+| :---------------------------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------------------------------: |
