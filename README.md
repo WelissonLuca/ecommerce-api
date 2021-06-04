@@ -18,9 +18,9 @@
 
 - [📋 Sobre](#Sobre)
 - [🕹 Tecnologias](#Tecnologias)
-- [👨🏽‍🔧 Contribuições ](#Contribuições)
+- [👨🏽‍🔧 Contribuições](#Contribuições)
 - [🧑🏽‍💻 Iniciando o projeto](#Como_rodar_o_projeto)
-- [👨🏽‍🔧 Contribuições ](#Contribuições)
+- [👨🏽‍🔧 Contribuições](#Contribuições)
 - [📝 Licença](#Licença)
 - [🦸 Contatos](#Contatos)
 
@@ -38,19 +38,126 @@
 
 # Tecnologias utilizadas
 
-<p align="left">
+- [Mysql](https://www.mysql.com/)
+- [Node JS](https://nodejs.org/en/)
+- [Express](https://expressjs.com/pt-br/)
+- [Sequelize](https://sequelize.org/)
+- [Swagger](https://swagger.io/)
+- [Eslint](https://eslint.org/)
+- [Nodemon](https://www.npmjs.com/package/nodemon)
+- [Git Commit Linter](https://www.npmjs.com/package/git-commit-msg-linter)
 
-- Node.js 14.17.0;
-
-- MySQL 8.0.25. </p>
 <hr>
 
 <!-- TECHNOLOGIES -->
 
 # Como rodar o projeto
 
-<p align="left"> algo  </p>
+Faça um clone desse repositório
 
+```javascript
+git clone https://github.com/WelissonLuca/ecommerce-api.git
+
+```
+
+Vá até à pasta dele, e instale as dependências usando o comando:
+
+```npm
+npm install ou yarn add
+```
+
+Crie um arquivo  .env na raiz do projeto e adicione as credências do seu banco de dados, ele deve ter essa estrutura
+
+```env
+
+MYSQL_USERNAME = seu usuário
+MYSQL_PASSWORD = sua senha
+MYSQL_DATABASE = ecommerce_gama
+MYSQL_HOST = localhost
+MYSQL_PORT = porta que esta usando
+MYSQL_DIALECT = 'mysql'
+```
+
+Inicie o projeto usando o comando:
+
+```npm
+npm start ou yarn start
+```
+
+Rode os comandos para criar o schema, tabelas e adicionar alguns valores
+
+```npm
+npx sequelize db:create  Comando usado para criar o schema
+npx sequelize db:migrate Comando usado para criar as tabelas
+npx sequelize db:seed:all Comando usado para adicionar alguns valores pre setados no banco
+```
+
+Para a documentação, acesse esta rota com o projeto rodando
+
+```url
+http://localhost:3000/api-docs/
+```
+
+<details>
+ <summary>Departamentos requisições</summary>
+ Para criar um departamento faça uma requisição do tipo POST na rota:
+
+ ```
+ http://localhost:3000/departaments
+ ```
+
+ Envie pela requisição os dados:
+
+ ```json
+  "name": "Departament name"
+```
+
+Para listar todos os departamentos faça uma requisição do tipo GET na rota:
+
+```url
+http://localhost:3000/departaments
+```
+
+Para listar todos os produtos cadastrados em um departamento especifico faça uma requisição do GET passando o id do departamento desejado para a rota:
+
+```url
+http://localhost:3000/departaments/:id
+```
+
+</details>
+
+<details>
+<summary>Produtos Requisições</summary>
+Para criar um produto faça uma requisição do tipo POST na rota:
+
+ ```
+ http://localhost:3000/products
+ ```
+
+ Envie pela requisição os dados:
+
+ ```json
+    "name": "product name",
+    "description": "product description",
+    "price": "1000",
+    "is_available": "sim",
+    "amount": 4,
+    "departament": 1
+```
+
+Para listar todos os produtos faça uma requisição do tipo GET na rota:
+
+```url
+http://localhost:3000/products
+```
+
+Para listar um produto especifico faça uma requisição do tipo GET passando o id do produto desejado para a rota:
+
+```url
+http://localhost:3000/product/:id
+```
+
+</details>
 <hr>
 
 <!-- CONTRIBUTING -->
