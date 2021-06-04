@@ -83,7 +83,7 @@ Inicie o projeto usando o comando:
 npm start ou yarn start
 ```
 
-Use os seguintes comandos para criar o schema, tabelas e adicionar valores
+Use os seguintes comandos para criar o schema, tabelas e adicionar valores:
 
 ```npm
 npx sequelize db:create  Comando usado para criar o schema
