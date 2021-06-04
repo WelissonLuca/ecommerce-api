@@ -3,8 +3,29 @@ const controller = require('../controllers/Departaments');
 
 const departamentRouter = express.Router();
 
-departamentRouter.post('/departaments', controller.create);
-departamentRouter.get('/departaments', controller.list);
-departamentRouter.get('/departament/:id', controller.showProductsDep);
+departamentRouter.post(
+  '/departaments',
+  /*
+    #swagger.tags = ['Departaments'],
+    #swagger.parameters['post departament object'] = {
+            in: 'body',
+            description: "New departament values",
+            schema: {
+               
+ 		"$name": "Limpeza"
+            }
+    } */
+  controller.create
+);
+departamentRouter.get(
+  '/departaments',
+  /* #swagger.tags = ['Departaments'], */
+  controller.list
+);
+departamentRouter.get(
+  '/departament/:id',
+  /* #swagger.tags = ['Departaments'], */
+  controller.showProductsDep
+);
 
 module.exports = { departamentRouter };

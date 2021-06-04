@@ -19,5 +19,6 @@
         "camelcase":"warn",
         "no-console": "off",
          "prettier/prettier": "off"
+        
     }
 }

@@ -4,6 +4,7 @@
   "description": "<h1 align=\"center\">Ecommerce-api</h1> <div style=\"display: grid; grid-template-columns: repeat(5, 100px); justify-content: center\">  <img alt=\"GitHub contagem de linguagens\" src=\"https://img.shields.io/github/languages/count/WelissonLuca/ecommerce-api?color=%2304D361&style=plastic\">",
   "main": "index.js",
   "scripts": {
+    "swagger-autogen": "node swagger.js",
     "start": "nodemon src/app.js -e js,json"
   },
   "repository": {
@@ -20,7 +21,9 @@
   "dependencies": {
     "express": "^4.17.1",
     "mysql2": "^2.2.5",
-    "sequelize": "^6.6.2"
+    "sequelize": "^6.6.2",
+    "swagger-ui-express": "^4.1.6",
+    "swagger-autogen": "^2.9.1"
   },
   "devDependencies": {
     "dotenv": "^10.0.0",
