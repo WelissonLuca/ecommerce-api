@@ -185,6 +185,55 @@
             "description": "Not Found"
           }
         }
+      },
+      "put": {
+        "tags": [
+          "Products"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "put products object",
+            "in": "body",
+            "description": "update products values",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "price": {
+                  "type": "string",
+                  "example": "1000"
+                },
+                "is_available": {
+                  "type": "string",
+                  "example": "sim"
+                },
+                "amount": {
+                  "type": "number",
+                  "example": 4
+                }
+              },
+              "required": [
+                "price",
+                "is_available",
+                "amount"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
       }
     }
   },

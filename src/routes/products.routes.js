@@ -37,4 +37,23 @@ productsRouter.post(
   controller.create
 );
 
+productsRouter.put(
+  '/product/:id',
+  /*
+    #swagger.tags = ['Products'],
+    #swagger.parameters['put products object'] = {
+            in: 'body',
+            description: "update products values",
+            schema: {
+               
+ 		
+    "$price": "1000",
+    "$is_available": "sim",
+    "$amount": 4,
+    
+
+            }
+    } */
+  controller.update
+);
 module.exports = { productsRouter };

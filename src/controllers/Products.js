@@ -1,10 +1,10 @@
-const Model = require("../models/Products");
+const Model = require('../models/Products');
 
 module.exports = {
   async list(req, res) {
     try {
       const all = await Model.findAll();
-      if (all.length === 0) throw new Error("Nenhum produto cadastrado");
+      if (all.length === 0) throw new Error('Nenhum produto cadastrado');
       return res.status(200).json(all);
     } catch (err) {
       return res.status(404).json({ message: err.message });
@@ -13,7 +13,7 @@ module.exports = {
   async show(req, res) {
     try {
       const product = await Model.findOne({ where: { id: req.params.id } });
-      if (product === null) throw new Error("Produto não cadastrado");
+      if (product === null) throw new Error('Produto não cadastrado');
       return res.status(200).json(product);
     } catch (err) {
       return res.status(404).json({ message: err.message });
@@ -37,7 +37,26 @@ module.exports = {
         });
         return res.status(201).json(products);
       }
-     
+    } catch (err) {
+      return res.status(400).json({ message: err.message });
+    }
+  },
+  async update(req, res) {
+    try {
+      const { id } = req.params;
+      const { price, is_available, amount } = req.body;
+      const productId = await Model.findByPk(id);
+      if (!productId || productId == null)
+        throw new Error('Produto não cadastrado');
+
+      const updateProduct = await Model.update({
+        price,
+        is_available,
+        amount,
+        
+      }, { where: { id } })
+      
+      return res.status(200).json({ price, is_available, amount });
     } catch (err) {
       return res.status(400).json({ message: err.message });
     }

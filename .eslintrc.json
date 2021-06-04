@@ -18,7 +18,7 @@
         "no-tabs":"off",
         "camelcase":"warn",
         "no-console": "off",
-         "prettier/prettier": "off"
-        
+        "prettier/prettier": "off",
+        "no-unused-vars":"off"
     }
 }
