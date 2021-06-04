@@ -1,5 +1,5 @@
 <h1 align="center">Aplicação de uma RESP API utilizando Node.js e Express.js</h1>
-<div style="display: grid; grid-template-columns: repeat(5, 100px); justify-content: center">
+<div align="center">
  <img alt="GitHub contagem de linguagens" src="https://img.shields.io/github/languages/count/WelissonLuca/ecommerce-api?color=%2304D361&style=plastic">
 
   <img alt="Tamanho do repositório" src="https://img.shields.io/github/languages/code-size/WelissonLuca/ecommerce-api?style=plastic">
@@ -181,6 +181,5 @@ Distribuído sob a licença MIT. Veja `LICENSE` para mais informações.
 
 # Contatos
 
-Github: [Inglyd](https://github.com/inglyd)
-
-Github: [Welisson Luca](https://github.com/WelissonLuca)
+| [<img src="https://avatars.githubusercontent.com/u/33432680?v=4" width="115"><br><small>@inglyd</small>](https://github.com/inglyd) | [<img src="https://avatars.githubusercontent.com/u/62263143?v=4" width="115"><br><sub>@WelissonLuca</sub>](https://github.com/WelissonLuca)
+| :---: | :---: |
