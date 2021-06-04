@@ -1,4 +1,5 @@
 const Model = require("../models/Departaments");
+const Products = require('../models/Products');
 const Sequelize = require("sequelize");
 
 module.exports = {
@@ -26,5 +27,19 @@ module.exports = {
 	},
 	async showProductsDep(req, res) {
 		const { id } = req.params;
+			const departamentExists = await Model.findByPk({ id });
+			if (!departamentExists)
+				throw new Error("Departamento não cadastrado");
+		
+		const products_dep = await Department.findAll({
+			attributes: ["name"],
+			include: [
+				{
+					model: Products,
+					where: { department: id },
+					attributes: ["name", "description", "price", "amount"],
+				},
+			],
+		});
 	},
 };

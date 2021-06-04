@@ -21,7 +21,6 @@ class Products extends Model {
 	static associate(models) {
 		this.belongsTo(models.Departaments, {
 			foreignKey: "id",
-			as: "departaments",
 		});
 	}
 }
