@@ -15,7 +15,7 @@ class Departaments extends Model {
 		);
 	}
 	static associate(models) {
-		Department.hasMany(models.Product, { foreignKey: "departament" });
+		Departaments.hasMany(models.Products, { foreignKey: "departament" });
 	}
 }
 

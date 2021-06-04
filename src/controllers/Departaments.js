@@ -1,6 +1,7 @@
 const Model = require("../models/Departaments");
-const Products = require('../models/Products');
+const Products = require("../models/Products");
 const Sequelize = require("sequelize");
+const { json } = require("sequelize");
 
 module.exports = {
 	async create(req, res) {
@@ -26,20 +27,24 @@ module.exports = {
 		}
 	},
 	async showProductsDep(req, res) {
-		const { id } = req.params;
-			const departamentExists = await Model.findByPk({ id });
-			if (!departamentExists)
-				throw new Error("Departamento não cadastrado");
-		
-		const products_dep = await Department.findAll({
-			attributes: ["name"],
-			include: [
-				{
-					model: Products,
-					where: { department: id },
-					attributes: ["name", "description", "price", "amount"],
-				},
-			],
-		});
+		try {
+			const { id } = req.params;
+			const departamentExists = await Model.findByPk(id );
+			if (!departamentExists) throw new Error("Departamento não cadastrado");
+
+			const departament_products = await Model.findAll({
+				attributes: ["name"],
+				include: [
+					{
+						model: Products,
+						where: { departament: id },
+						attributes: ["name", "description", "price", "amount"],
+					},
+				],
+			});
+			return res.status(200).json({ departament_products });
+		} catch (err) {
+			return res.status(404).json({ message: err.message });
+		}
 	},
 };
