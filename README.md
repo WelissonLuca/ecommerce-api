@@ -19,6 +19,7 @@
 - [📋 Sobre](#Sobre)
 - [🕹 Tecnologias](#Tecnologias)
 - [🧑🏽‍💻 Iniciando o projeto](#Iniciando)
+- [🧑🏽‍💻 Exemplos de requisições](#Exemplos)
 - [👨🏽‍🔧 Contribuições](#Contribuições)
 - [📝 Licença](#Licença)
 - [🦸 Contatos](#Contatos)
@@ -35,7 +36,7 @@
 
 <!-- TECHNOLOGIES -->
 
-# Tecnologias 
+# Tecnologias
 
 - [Mysql](https://www.mysql.com/)
 - [Node JS](https://nodejs.org/en/)
@@ -52,50 +53,90 @@
 
 # Iniciando
 
-Clone este repositório
+##### Pré-requisitos
 
-```javascript
-git clone https://github.com/WelissonLuca/ecommerce-api.git
+- Docker
 
+  ```sh
+  https://www.docker.com/products/docker-desktop
+  ```
+
+- Docker-compose
+
+  ```sh
+  https://docs.docker.com/compose/
+  ```
+
+- npm
+
+  ```sh
+  npm install npm -g
+  ```
+
+- sequelize-cli
+
+  ```sh
+  npm install sequelze-cli -g
+  ```
+- eslint
+
+  ```sh
+  https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint
+  ```
+
+- prettier
+
+  ```sh
+  https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode
+  ```
+
+<hr>
+
+### Instalação e uso
+
+```bash
+# Abra um terminal e copie este repositório com o comando
+$ git clone https://github.com/WelissonLuca/ecommerce-api.git
+# ou use a opção de download.
+
+# Entre na pasta com 
+$ cd ecommerce-api
+
+# Instale as dependências
+$ npm install ou yarn
+
+# Inicie o docker-compose, para subir o container com mysql
+$ docker-compose up -d # flag -d faz com que o container rode em segundo plano
+# Verifique se o container esta rodando 
+$ docker ps
+# Caso não esteja rode o comando para iniciar ele
+$ docker-compose start
+# Crie o banco de dados e as tabelas utilizando os comandos
+$ npx sequelize db:create # Criação do banco
+$ npx sequelize db:migrate # Criação das tabelas
+    
+# Conexão com o banco de dados:
+# altere o nome do arquivo .env.example para .env
+# dentro dele passe suas credencias para conexão
+# Caso va usar o docker não precisa alterar as credencias
+# Popule o banco de dados usando o aquivo "seed.js":
+$ npx sequelize db:seed:all 
+# Rode a aplicação
+$ npm start
 ```
 
-Acesse a pasta do projeto, e instale as dependências usando no seu terminal o comando:
-
-```npm
-npm install ou yarn add
-```
-
-Crie um arquivo .env na raiz do projeto e adicione as informações do seu banco de dados, seguindo a seguinte estrutura:
-
-```env
-
-MYSQL_USERNAME = seu usuário
-MYSQL_PASSWORD = sua senha
-MYSQL_DATABASE = ecommerce_gama
-MYSQL_HOST = localhost
-MYSQL_PORT = porta que esta usando
-MYSQL_DIALECT = 'mysql'
-```
-
-Inicie o projeto usando o comando:
-
-```npm
-npm start ou yarn start
-```
-
-Use os seguintes comandos para criar o schema, tabelas e adicionar valores:
-
-```npm
-npx sequelize db:create  Comando usado para criar o schema
-npx sequelize db:migrate Comando usado para criar as tabelas
-npx sequelize db:seed:all Comando usado para adicionar alguns valores pre setados no banco
-```
-
-Para a documentação, acesse esta rota com o projeto em execução
+Documentação da API
 
 ```url
 http://localhost:3000/api-docs/
 ```
+
+<img src="https://imgseed.xyz/img/1623334614486fd85.png" alt="Documentação Print">
+
+
+
+Exemplos 
+================
 
 <details>
  <summary>Departamentos requisições</summary>
@@ -154,6 +195,23 @@ Para listar um produto especifico faça uma requisição do tipo GET passando o 
 
 ```url
 http://localhost:3000/product/:id
+```
+
+Para atualizar um produto faça uma requisição do tipo PUT na rota:
+
+```
+http://localhost:3000/products
+```
+
+Envie pela requisição os dados:
+
+```json
+   "name": "product name",
+   "description": "product description",
+   "price": "1000",
+   "is_available": "sim",
+   "amount": 4,
+   "departament": 1
 ```
 
 </details>
