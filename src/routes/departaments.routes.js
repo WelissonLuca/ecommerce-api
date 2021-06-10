@@ -27,5 +27,10 @@ departamentRouter.get(
   /* #swagger.tags = ['Departaments'], */
   controller.showProductsDep
 );
+departamentRouter.delete(
+  '/departament/:id',
+  /* #swagger.tags = ['Departaments'], */
+  controller.delete
+);
 
 module.exports = { departamentRouter };
