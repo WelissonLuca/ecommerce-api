@@ -1,3 +1,4 @@
+const Products = require('../models/Products');
 const Model = require('../models/Products');
 
 module.exports = {
@@ -24,8 +25,7 @@ module.exports = {
     try {
       const { name, description, price, is_available, amount, departament } =
         req.body;
-      const productExists = await Model.findOne({ where: { name } });
-      if (productExists) throw new Error('Produto já existe na base de dados');
+      if (name === "" || description === "" || price === null || is_available === "" || amount === null || departament === null) throw new Error('Produto já existe na base de dados');
       else {
         const products = await Model.create({
           name,
@@ -53,12 +53,24 @@ module.exports = {
         price,
         is_available,
         amount,
-        
+
       }, { where: { id } })
-      
+
       return res.status(200).json({ price, is_available, amount });
     } catch (err) {
       return res.status(400).json({ message: err.message });
     }
   },
+
+  async delete(req, res) {
+    try {
+      const { id } = req.params;
+      const product = await Model.findByPk(id);
+      if (!product) throw new Error('Produto não cadastrado');
+      product.destroy({ where: { id: req.params.id } });
+      return res.status(200).json({ message: 'Produto deletado com sucesso' });
+    } catch (err) {
+      return res.status(400).json({ message: err.message });
+    }
+  }
 };

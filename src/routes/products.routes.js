@@ -17,7 +17,7 @@ productsRouter.get(
 
 productsRouter.post(
   '/products',
-  
+
   /*
     #swagger.tags = ['Products'],
     #swagger.parameters['post products object'] = {
@@ -25,7 +25,7 @@ productsRouter.post(
             description: "New products values",
             schema: {
                
- 		"$name": "SSD",
+      "$name": "SSD",
     "$description": "500GB",
     "$price": "1000",
     "$is_available": "sim",
@@ -46,7 +46,7 @@ productsRouter.put(
             description: "update products values",
             schema: {
                
- 		
+    	
     "$price": "1000",
     "$is_available": "sim",
     "$amount": 4,
@@ -55,5 +55,11 @@ productsRouter.put(
             }
     } */
   controller.update
+);
+
+productsRouter.delete(
+  '/product/:id',
+  /* #swagger.tags = ['Products'], */
+  controller.delete
 );
 module.exports = { productsRouter };
