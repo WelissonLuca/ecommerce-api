@@ -25,7 +25,15 @@ module.exports = {
     try {
       const { name, description, price, is_available, amount, departament } =
         req.body;
-      if (name === "" || description === "" || price === null || is_available === "" || amount === null || departament === null) throw new Error('Produto já existe na base de dados');
+      if (
+        name === '' ||
+        description === '' ||
+        price === null ||
+        is_available === '' ||
+        amount === null ||
+        departament === null
+      )
+        throw new Error('Preencha todos os dados');
       else {
         const products = await Model.create({
           name,
@@ -38,7 +46,7 @@ module.exports = {
         return res.status(201).json(products);
       }
     } catch (err) {
-      return res.status(400).json({ message: err.message });
+      return res.status(404).json({ message: err.message });
     }
   },
   async update(req, res) {
@@ -49,14 +57,18 @@ module.exports = {
       if (!productId || productId == null)
         throw new Error('Produto não cadastrado');
 
-      const updateProduct = await Model.update({
-        price,
-        is_available,
-        amount,
+      const updateProduct = await Model.update(
+        {
+          price,
+          is_available,
+          amount,
+        },
+        { where: { id } }
+      );
 
-      }, { where: { id } })
-
-      return res.status(200).json({ price, is_available, amount });
+      return res.status(200).json({ 
+        message: 'Produto atualizado com sucesso'
+      });
     } catch (err) {
       return res.status(400).json({ message: err.message });
     }
@@ -72,5 +84,5 @@ module.exports = {
     } catch (err) {
       return res.status(400).json({ message: err.message });
     }
-  }
+  },
 };

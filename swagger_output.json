@@ -103,6 +103,9 @@
         "responses": {
           "200": {
             "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
           }
         }
       }
@@ -176,8 +179,8 @@
           "201": {
             "description": "Created"
           },
-          "400": {
-            "description": "Bad Request"
+          "404": {
+            "description": "Not Found"
           }
         }
       }
@@ -243,6 +246,28 @@
                 "amount"
               ]
             }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Products"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
           }
         ],
         "responses": {

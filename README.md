@@ -76,7 +76,7 @@
 - sequelize-cli
 
   ```sh
-  npm install sequelze-cli -g
+  npm install sequelize-cli -g
   ```
 - eslint
 

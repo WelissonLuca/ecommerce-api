@@ -9,8 +9,20 @@ module.exports = {
         {
           name: 'Produtos de higiene',
         },
+        {
+          name: 'Decoração',
+        },
+        {
+          name: 'Calçados',
+        },
+        {
+          name: 'Acessorios',
+        },
+        {
+          name: 'Cozinha',
+        },
       ],
-      {},
+      {}
     );
   },
 
