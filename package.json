@@ -28,7 +28,7 @@
     "swagger-autogen": "^2.9.1"
   },
   "devDependencies": {
-    
+ 
     "eslint": "^7.27.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-config-prettier": "^8.3.0",
@@ -38,5 +38,6 @@
     "nodemon": "2.0.9",
     "prettier": "^2.3.0",
     "sequelize-cli": "^6.2.0"
+
   }
 }
