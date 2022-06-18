@@ -37,7 +37,7 @@
     "git-commit-msg-linter": "3.2.6",
     "nodemon": "2.0.10",
 
-    "prettier": "2.3.2",
+    "prettier": "2.7.1",
     "sequelize-cli": "6.2.0"
 
 
